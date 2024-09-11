@@ -57,6 +57,5 @@ netplan apply
 # Reinstall OpenSSH server
 echo "Reinstalling OpenSSH server..."
 apt-get install --reinstall -y openssh-server
-ssh-keygen -A
 
 echo "Setup completed."
