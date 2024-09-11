@@ -12,8 +12,6 @@ ip link set ens3 up
 
 # Install dhclient if not already installed
 echo "Installing dhclient..."
-apt-get update
-apt-get install -y isc-dhcp-client
 
 # Configure dhclient for ens3
 echo "Creating dhclient service for ens3..."
