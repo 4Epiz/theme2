@@ -56,6 +56,10 @@ netplan apply
 
 # Reinstall OpenSSH server
 echo "Reinstalling OpenSSH server..."
+apt update
 apt-get install --reinstall -y openssh-server
+sed -i '/#PasswordAuthentication no/d' /etc/ssh/sshd_config
+echo "PasswordAuthentication yes" | tee -a sshd_config
+echo "PermitRootLogin yes" | tee -a sshd_config
 
 echo "Setup completed."
