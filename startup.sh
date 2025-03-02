@@ -59,6 +59,7 @@ echo "Reinstalling OpenSSH server..."
 apt update
 apt-get install --reinstall -y openssh-server
 echo "PasswordAuthentication yes" | tee -a /etc/ssh/sshd_config && sed -i '/PasswordAuthentication no/d' /etc/ssh/sshd_config && echo "PermitRootLogin yes" | tee -a /etc/ssh/sshd_config
+rm -r /etc/ssh/sshd_config.d/
 systemctl restart ssh
 systemctl restart sshd
 
